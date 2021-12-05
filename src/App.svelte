@@ -1,23 +1,20 @@
 <script>
-	 let name = 'Kostya';
+	 let firstName = 'Kostya';
+	 let lastName = 'Chernysh';
 	 let profession = '';
-	 const handleClick = () => {
-		 name = 'Kostya Chernysh'
-	 }
-	 const setProfession = () => {
-		 profession = 'web dev'
-	 }
-	 const handleInput = (e) => {
-		 profession = e.target.value;
-	 }
+
+	 $: fullName = `${firstName} ${lastName}`;
+	 $: {
+		 console.log(profession);
+		 console.log(fullName);
+	 }// both console.log would trigger everytime profession or fullName is changed
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
+	<p>{fullName}</p>
 	<p>Profession: {profession}</p>
-	<button on:click={handleClick}>Update</button>
-	<button on:click={setProfession}>Set Profession</button>
-	<input type="text" on:input={handleInput} value={profession}>
+	<input type="text" bind:value={firstName}>
+	<input type="text" bind:value={lastName}>
 	<input type="text" bind:value={profession}>
 </main>
 
