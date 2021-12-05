@@ -18,6 +18,7 @@
 	<button on:click={handleClick}>Update</button>
 	<button on:click={setProfession}>Set Profession</button>
 	<input type="text" on:input={handleInput} value={profession}>
+	<input type="text" bind:value={profession}>
 </main>
 
 <style>
