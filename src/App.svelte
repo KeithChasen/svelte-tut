@@ -1,21 +1,20 @@
 <script>
-	 let firstName = 'Kostya';
-	 let lastName = 'Chernysh';
-	 let profession = '';
-
-	 $: fullName = `${firstName} ${lastName}`;
-	 $: {
-		 console.log(profession);
-		 console.log(fullName);
-	 }// both console.log would trigger everytime profession or fullName is changed
+	 let people = [
+		 { name: 'Jack', color: 'red', age: 35, id: 1 },
+		 { name: 'John', color: 'blue', age: 23, id: 2 },
+		 { name: 'Jane', color: 'yellow', age: 44, id: 3 },
+	 ];
 </script>
 
 <main>
-	<p>{fullName}</p>
-	<p>Profession: {profession}</p>
-	<input type="text" bind:value={firstName}>
-	<input type="text" bind:value={lastName}>
-	<input type="text" bind:value={profession}>
+	{#each people as person (person.id)}
+		<div>
+			<h4>{person.name}</h4>
+			<p style='color: {person.color}'>{person.age} years old</p>
+		</div>
+	{:else}
+		<p>There's no one there</p>
+	{/each}
 </main>
 
 <style>
