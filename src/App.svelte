@@ -1,14 +1,23 @@
 <script>
 	 let name = 'Kostya';
+	 let profession = '';
 	 const handleClick = () => {
-		 name += ' Chernysh'
+		 name = 'Kostya Chernysh'
+	 }
+	 const setProfession = () => {
+		 profession = 'web dev'
+	 }
+	 const handleInput = (e) => {
+		 profession = e.target.value;
 	 }
 </script>
 
 <main>
 	<h1>Hello {name}!</h1>
-	<p>Hello there</p>
+	<p>Profession: {profession}</p>
 	<button on:click={handleClick}>Update</button>
+	<button on:click={setProfession}>Set Profession</button>
+	<input type="text" on:input={handleInput} value={profession}>
 </main>
 
 <style>
