@@ -14,6 +14,11 @@
 	{#each people as person (person.id)}
 		<div>
 			<h4>{person.name}</h4>
+			{#if person.age > 25}
+				<p style="background: {person.color}; width: 50%; margin: auto">Award</p>
+			{:else}
+				<p style="background: {person.color}; width: 25%; margin: auto; color: white">none</p>
+			{/if}
 			<p style='color: {person.color}'>{person.age} years old</p>
 			<button on:click={() => handleClick(person.id)}>delete</button>
 		</div>
