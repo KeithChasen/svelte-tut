@@ -4,6 +4,10 @@
 		 { name: 'John', color: 'blue', age: 23, id: 2 },
 		 { name: 'Jane', color: 'yellow', age: 44, id: 3 },
 	 ];
+
+	 const handleClick = (id) => {
+		 people = people.filter(person => person.id !== id)
+	 }
 </script>
 
 <main>
@@ -11,6 +15,7 @@
 		<div>
 			<h4>{person.name}</h4>
 			<p style='color: {person.color}'>{person.age} years old</p>
+			<button on:click={() => handleClick(person.id)}>delete</button>
 		</div>
 	{:else}
 		<p>There's no one there</p>
