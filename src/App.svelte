@@ -12,7 +12,7 @@
 	 }
 </script>
 
-<Modal />
+<Modal message="Modal from app" isPromo={true} />
 <main>
 	{#each people as person (person.id)}
 		<div>
