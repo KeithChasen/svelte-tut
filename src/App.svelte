@@ -20,7 +20,7 @@
 
 <Modal message="Modal from app" {showModal} on:click={toggleModal} />
 <main>
-	<button on:click={toggleModal}>Open modal</button>
+	<button on:click|once={toggleModal}>Open modal</button>
 	{#each people as person (person.id)}
 		<div>
 			<h4>{person.name}</h4>
