@@ -18,9 +18,16 @@
 	 }
 </script>
 
-<Modal message="Modal from app" {showModal} on:click={toggleModal} />
+<Modal {showModal} on:click={toggleModal}>
+	<h3>Add a new person</h3>
+	<form>
+		<input type="text" placeholder="name">
+		<input type="text" placeholder="color">
+		<button>Add</button>
+	</form>
+</Modal>
 <main>
-	<button on:click|once={toggleModal}>Open modal</button>
+	<button on:click={toggleModal}>Open modal</button>
 	{#each people as person (person.id)}
 		<div>
 			<h4>{person.name}</h4>
