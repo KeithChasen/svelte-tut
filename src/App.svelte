@@ -1,5 +1,6 @@
 <script>
 	import Modal from "./Modal.svelte";
+	import AddPersonForm from "./AddPersonForm.svelte";
 
 	let showModal = false;
 
@@ -19,11 +20,7 @@
 </script>
 
 <Modal {showModal} on:click={toggleModal}>
-	<form>
-		<input type="text" placeholder="name">
-		<input type="text" placeholder="color">
-		<button>Add</button>
-	</form>
+	<AddPersonForm />
 	<h3 slot="title">Add a new person</h3>
 </Modal>
 <main>
