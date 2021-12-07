@@ -2,12 +2,10 @@
     let name;
     let color;
     let age;
-    let svelte = false;
-    let node = false;
-    let react = false;
+    let skills = [];
 
     const handleSubmit = () => {
-        console.log(name, color, age, svelte, node, react)
+        console.log(name, color, age, skills)
     }
 </script>
 
@@ -16,9 +14,9 @@
     <input type="text" placeholder="color" bind:value={color}>
     <input type="number" placeholder="age" bind:value={age}>
     <label>Skills:</label>
-    <input type="checkbox" bind:checked={svelte}>svelte<br />
-    <input type="checkbox" bind:checked={node}>node<br />
-    <input type="checkbox" bind:checked={react}>react<br />
+    <input type="checkbox" bind:group={skills} value="svelte">svelte<br />
+    <input type="checkbox" bind:group={skills} value="node">node<br />
+    <input type="checkbox" bind:group={skills} value="react">react<br />
     <button>Add</button>
 </form>
 
