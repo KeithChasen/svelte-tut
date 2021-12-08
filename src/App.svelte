@@ -17,10 +17,16 @@
 	 const toggleModal = () => {
 		 showModal = !showModal;
 	 }
+
+	 const addPerson = (e) => {
+		 const newPerson = e.detail;
+		 people = [newPerson, ...people];
+		 showModal = false;
+	 }
 </script>
 
 <Modal {showModal} on:click={toggleModal}>
-	<AddPersonForm />
+	<AddPersonForm on:addPerson={addPerson}/>
 	<h3 slot="title">Add a new person</h3>
 </Modal>
 <main>
